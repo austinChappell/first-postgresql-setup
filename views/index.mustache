@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    {{ #rows }}
+    <div class="person">
+      <strong>{{ name }}</strong> works at <strong>{{ business }}</strong> and is on <strong>Tier {{ tier }}</strong>.
+      <form action="/destroy/{{ id }}" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/edit/{{ id }}">Edit</a>
+    </div>
+    {{ /rows}}
+  </body>
+</html>
